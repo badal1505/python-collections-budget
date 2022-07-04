@@ -1,5 +1,5 @@
 from . import Expense
-from collections import Counter
+import collections
 import matplotlib.pyplot as plt
 
 expenses = Expense.Expenses()
@@ -11,7 +11,7 @@ spending_categories = []
 for expense in expenses.list:
     spending_categories.append(expense.category)
 
-spending_counter = Counter(spending_categories)
+spending_counter = collections.Counter(spending_categories)
 top5 = spending_counter.most_common(5)
 categories, count = zip(*top5)
 
